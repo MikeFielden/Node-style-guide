@@ -27,7 +27,6 @@
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Constructors](#constructors)
-  1. [Contributors](#contributors)
 
 ## Types
 
