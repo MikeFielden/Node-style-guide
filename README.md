@@ -1,5 +1,5 @@
 ## JS Style Guide
-### Pieced together from 
+### Pieced together from
 - [Airbnb stlyeguide](https://github.com/airbnb/javascript)
 - [RisingStack](http://risingstack.com)
 - My own tweaks and comments added :)
@@ -15,6 +15,7 @@
   1. [Variables](#variables)
   1. [Requires](#requires)
   1. [Callbacks](#callbacks)
+  1. [Errors-and-Exceptions](#errors-and-Exceptions)
   1. [Try-catch](#try-catch)
   1. [Hoisting](#hoisting)
   1. [Conditional Expressions & Equality](#conditional-expressions--equality)
@@ -434,7 +435,7 @@
       - core modules
       - npm modules
       - others
-      
+
     ```javascript
     // bad
     var Car = require('./models/Car');
@@ -493,7 +494,7 @@
       // if not return here
       cb(err);
     }
-    
+
     // this line will be executed as well
     console.log(drabonballs);
   });
@@ -509,13 +510,29 @@
   ```
 **[⬆ back to top](#table-of-contents)**
 
+## Errors and Exceptions
+
+- An error is any instance of the Error class. Errors may be constructed and then passed directly to another function or thrown.
+
+  Just passing an error without making it an exception
+  ```javascript
+  callback(new Error('PANIC!'));
+  ```
+
+
+- When you throw an Error it becomes an exception.
+
+  ```javascript
+  throw new Error('PANIC!');
+  ```
+**[⬆ back to top](#table-of-contents)**
 
 ## Try catch
 
 - Only throw in synchronous functions
 
   Try-catch blocks cannot be used to wrap async code. They will bubble up to to the top, and bring
-  down the entire process.
+  down the entire process. This would be bad. Remember an async callback runs at a later time after the try/catch has exited. Thus the exception gets caught by the top level Node process.
 
   ```javascript
   //bad
