@@ -15,7 +15,7 @@
   1. [Variables](#variables)
   1. [Requires](#requires)
   1. [Callbacks](#callbacks)
-  1. [Errors-and-Exceptions](#errors-and-Exceptions)
+  1. [Errors and Exceptions](#errors-and-exceptions)
   1. [Try-catch](#try-catch)
   1. [Hoisting](#hoisting)
   1. [Conditional Expressions & Equality](#conditional-expressions--equality)
